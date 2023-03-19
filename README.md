@@ -22,3 +22,5 @@ Oznaka |         Naziv         | Kratki opis
 ## Tehnologije i oprema
 
 Za verzioniranje programskog koda koristit će se git i GitHub, za pisanje tehničke i projektne dokumentacije GitHub Wiki, a za planiranje i praćenje projektnog zadatka alat GitHub projects. Nadalje, za razvijanje projekta koristit će se .Net Framework kao razvojni okvir pri čemu će vrsta projekta biti WPF.
+
+![Online Gantt 20230319](https://user-images.githubusercontent.com/127131250/226206534-eddd3676-c089-41d4-bdc0-a5aa56eac623.png)
