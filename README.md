@@ -16,8 +16,9 @@ Ovaj projekt pruža rješenje za jednostavnije vođenje poslovanja jedne teretan
 Oznaka |         Naziv         | Kratki opis 
 ------ | --------------------- | ----------- 
  F01   |         Login         | Za pristup sustavu potrebna je autentifikacija korisnika pomoću login funkcionalnosti. Zaposlenik se logira s podacima koji su mu dodijeljeni ovisno o tome koliko ovlasti im je vlasnik dodijelio. 
- F02   | Unos osobnih podataka | Za upis novog člana potrebno je unijeti slijedeće osobne podatke: ime, prezime, e-mail, godina rođenja, kontakt i status članarine.
- F03   | Statistički izračun i  grafički prikaz  | Sustav omogućuje statistički izračun i prikaz  dobivenih rezultata na grafu o redovitosti pojedinog člana.
+  F02   | Bilježenje ulaza i izlaza članova te prikaz svih članova  | Sustav omogućuje bilježenje ulaza i izlaza svakog pojedinog člana te prikaz svih članova teretane na jednom mjestu.
+ F03  | Unos osobnih podataka | Za upis novog člana potrebno je unijeti slijedeće osobne podatke: ime, prezime, e-mail, godina rođenja, kontakt i status članarine.
+
     
 ## Tehnologije i oprema
 
