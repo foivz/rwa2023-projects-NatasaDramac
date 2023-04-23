@@ -71,9 +71,9 @@
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(395, 270);
+            btnLogin.Location = new Point(417, 270);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(171, 60);
+            btnLogin.Size = new Size(149, 48);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Prijavi se";
             btnLogin.UseVisualStyleBackColor = true;
@@ -90,6 +90,7 @@
             Controls.Add(txtPassword);
             Controls.Add(txtUsername);
             Name = "FrmLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Prijava u sustav teretane Strong Man";
             ResumeLayout(false);
             PerformLayout();
