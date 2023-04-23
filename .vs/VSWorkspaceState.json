@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DLLs"
+    "\\Documentation",
+    "\\Software"
   ],
-  "SelectedNode": "\\DLLs",
+  "SelectedNode": "\\README.md",
   "PreviewInSolutionExplorer": false
 }
