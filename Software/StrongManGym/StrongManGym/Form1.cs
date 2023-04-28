@@ -16,11 +16,12 @@ namespace StrongManGym
         public FrmLogin()
         {
             InitializeComponent();
-           
-            DB.SetConfiguration("RWA_ndramac_DB", "RWA_ndramac_User", "TRs8W#Qw");
             
         }
-
+        public static void SetConfiguration (string database = "RWA_ndramac_DB", string username = "RWA_ndramac_User", string password= "TRs8W#Qw")
+        {
+            DB.SetConfiguration(database,username,password);
+                }
         private void label1_Click(object sender, EventArgs e)
         {
 
