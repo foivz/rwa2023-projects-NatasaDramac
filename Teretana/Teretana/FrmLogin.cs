@@ -9,12 +9,19 @@ namespace Teretana
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
 
+            if (username == "")
+            {
+                MessageBox.Show("Morate upisati korisnièko ime!");
+            }
+            else if (password == "")
+            {
+                MessageBox.Show("Morate upisati lozinku!");
+            }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Teretana.Models
 {
-    internal class Class1
+    public class Zaposleni : Person
     {
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }

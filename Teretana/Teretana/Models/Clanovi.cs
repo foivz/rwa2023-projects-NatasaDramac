@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Teretana.Models
 {
-    internal class Class1
+    internal class Clanovi : Person
     {
+        public int SifraClana { get; set; }
+        public string Email { get; set; }
+        public DateTime DatumRodenja { get; set; }
+        public string Kontakt { get; set; }
+        public string StatusClanarine { get; set; }
     }
 }

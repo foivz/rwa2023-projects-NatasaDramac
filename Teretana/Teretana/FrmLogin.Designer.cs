@@ -49,7 +49,6 @@
             txtPassword.Size = new Size(306, 27);
             txtPassword.TabIndex = 3;
             txtPassword.UseSystemPasswordChar = true;
-            txtPassword.TextChanged += textBox2_TextChanged;
             // 
             // lblKorisnickoime
             // 
@@ -94,6 +93,11 @@
             Text = "Prijava u sustav teretane Strong Man";
             ResumeLayout(false);
             PerformLayout();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
