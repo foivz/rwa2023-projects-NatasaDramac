@@ -22,19 +22,26 @@ namespace StrongManGym
         {
             DB.SetConfiguration(database,username,password);
                 }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            if (username == "")
+            {
+                MessageBox.Show("Morate upisati korisničko ime!");
+            }
+            else if (password == "")
+            {
+                MessageBox.Show("Morate upisati lozinku!");
+            }
+
         }
     }
 }
