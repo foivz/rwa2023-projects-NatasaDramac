@@ -8,7 +8,7 @@ namespace StrongManGym.Models
 {
     public class Zaposleni : Person
     {
-        public int id { get; set; }
+        public int IdZaposleni { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
     }
