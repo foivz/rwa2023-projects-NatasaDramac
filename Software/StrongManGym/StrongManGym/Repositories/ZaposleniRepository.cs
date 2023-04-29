@@ -38,7 +38,7 @@ namespace StrongManGym.Repositories
             string firstname = reader["Ime"].ToString();
             string lastname = reader["Prezime"].ToString();
 
-            string username = reader["Korisničko ime"].ToString();
+            string username = reader["Korisničko_ime"].ToString();
             string password = reader["Lozinka"].ToString();
 
             var zaposleni = new Zaposleni()
@@ -54,7 +54,7 @@ namespace StrongManGym.Repositories
         public static Zaposleni GetZaposleni(string username)
         {
             Zaposleni zaposleni = null;
-            string query = $"SELECT * FROM Login WHERE Korisničko ime = '{username}'";
+            string query = $"SELECT * FROM Login WHERE Korisničko_ime = '{username}'";
             DB.OpenConnection();
             var reader = DB.GetDataReader(query);
             if (reader.HasRows)

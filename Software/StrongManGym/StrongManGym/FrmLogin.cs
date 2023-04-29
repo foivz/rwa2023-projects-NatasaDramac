@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBLayer;
+using StrongManGym.Models;
+using StrongManGym.Repositories;
 
 namespace StrongManGym
 {
     public partial class FrmLogin : Form
     {
+        public static Zaposleni LoggedZaposleni { get; set; }
         public FrmLogin()
         {
             InitializeComponent();
@@ -22,11 +25,6 @@ namespace StrongManGym
         {
             DB.SetConfiguration(database,username,password);
                 }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -40,6 +38,22 @@ namespace StrongManGym
             else if (password == "")
             {
                 MessageBox.Show("Morate upisati lozinku!");
+            }
+            else
+            {
+                var zaposleni = ZaposleniRepository.GetZaposleni(username);
+                if (zaposleni != null && zaposleni.Password == password) {
+                    LoggedZaposleni =zaposleni;
+                    FrmClanovi forma = new FrmClanovi();
+                    this.Hide();
+                    forma.ShowDialog();
+                    this.Close();
+                    MessageBox.Show("Uspješna prijava!");
+                }
+                else
+                {
+                    MessageBox.Show("Neuspješna prijava!");
+                }
             }
 
         }
