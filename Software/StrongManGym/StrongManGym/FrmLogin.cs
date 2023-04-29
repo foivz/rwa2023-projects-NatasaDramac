@@ -10,26 +10,28 @@ using System.Windows.Forms;
 using DBLayer;
 using StrongManGym.Models;
 using StrongManGym.Repositories;
+using System.Data.SqlClient;
 
 namespace StrongManGym
 {
     public partial class FrmLogin : Form
     {
         public static Zaposleni LoggedZaposleni { get; set; }
+        public static void SetConfiguration(string database = "RWA_ndramac_DB", string username = "RWA_ndramac_User", string password = "TRs8W#Qw")
+        {
+            DB.SetConfiguration(database, username, password);
+        }
         public FrmLogin()
         {
+            SetConfiguration();
             InitializeComponent();
-            
         }
-        public static void SetConfiguration (string database = "RWA_ndramac_DB", string username = "RWA_ndramac_User", string password= "TRs8W#Qw")
-        {
-            DB.SetConfiguration(database,username,password);
-                }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
+           
 
             if (username == "")
             {
@@ -41,9 +43,8 @@ namespace StrongManGym
             }
             else
             {
-                var zaposleni = ZaposleniRepository.GetZaposleni(username);
-                if (zaposleni != null && zaposleni.Password == password) {
-                    LoggedZaposleni =zaposleni;
+                LoggedZaposleni = ZaposleniRepository.GetZaposleni(txtUsername.Text);
+                if (LoggedZaposleni != null && LoggedZaposleni.CheckPassword (txtPassword.Text)) {
                     FrmClanovi forma = new FrmClanovi();
                     this.Hide();
                     forma.ShowDialog();

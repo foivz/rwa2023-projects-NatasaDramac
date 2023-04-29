@@ -13,7 +13,7 @@ namespace StrongManGym.Repositories
     {
         public static Zaposleni GetZaposleni (int id)
         {
-            string query = $"SELECT * FROM Login WHERE Id = {id}";
+            string query = $"SELECT * FROM RWA_ndramac_DB.dbo.Login WHERE IdZaposleni = {id}";
             return FetchZaposleni(query);
         }
 
@@ -34,12 +34,12 @@ namespace StrongManGym.Repositories
 
         private static Zaposleni CreateObject(SqlDataReader reader)
         {
-            int id = int.Parse(reader["Id"].ToString());
-            string firstname = reader["Ime"].ToString();
-            string lastname = reader["Prezime"].ToString();
+            int id = int.Parse(reader["IdZaposleni"].ToString());
+            string firstname = reader["Name"].ToString();
+            string lastname = reader["Lastname"].ToString();
 
-            string username = reader["Korisničko_ime"].ToString();
-            string password = reader["Lozinka"].ToString();
+            string username = reader["Username"].ToString();
+            string password = reader["Password"].ToString();
 
             var zaposleni = new Zaposleni()
             {
@@ -54,7 +54,7 @@ namespace StrongManGym.Repositories
         public static Zaposleni GetZaposleni(string username)
         {
             Zaposleni zaposleni = null;
-            string query = $"SELECT * FROM Login WHERE Korisničko_ime = '{username}'";
+            string query = $"SELECT * FROM Login WHERE CAST (Username as nvarchar(max)) = '{username}'";
             DB.OpenConnection();
             var reader = DB.GetDataReader(query);
             if (reader.HasRows)
