@@ -27,7 +27,19 @@ namespace StrongManGym
         private void ShowClanovi()
         {
             var clanovi = ClanoviRepository.GetClanovis();
+            //DataGridView test = new DataGridView();
+            //test.DataSource = clanovi;
+            //test.Columns["Id"].Visible = false;
+            //dgvClanovi.Columns["Id"].Visible = false;
             dgvClanovi.DataSource = clanovi;
+            dgvClanovi.Columns["Id"].Visible = false;
+            dgvClanovi.Columns["IdClana"].DisplayIndex = 0;
+            dgvClanovi.Columns["FirstName"].DisplayIndex = 1;
+            dgvClanovi.Columns["LastName"].DisplayIndex = 2;
+            dgvClanovi.Columns["E_mail"].DisplayIndex = 3;
+            dgvClanovi.Columns["DateOfBirth"].DisplayIndex = 4;
+            dgvClanovi.Columns["Kontakt"].DisplayIndex = 5;
+            dgvClanovi.Columns["StatusClanarine"].DisplayIndex = 6;
         }
 
         private void btnNoviClan_Click(object sender, EventArgs e)

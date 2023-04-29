@@ -15,7 +15,7 @@ namespace StrongManGym.Repositories
         public static Clanovi GetClanovi(int id) 
         {
             Clanovi clanovi = null;
-            string query = $"SELECT * FROM Clanovi WHERE Id = {id}";
+            string query = $"SELECT * FROM Clanovi WHERE IdClana = {id}";
             DB.OpenConnection();
             var reader = DB.GetDataReader(query);
             if (reader.HasRows)
@@ -45,17 +45,24 @@ namespace StrongManGym.Repositories
 
         private static Clanovi CreateObject(SqlDataReader reader)
         {
-            int id = int.Parse(reader["Id"].ToString());
-            string firstname = reader["Name"].ToString();
+            
+            int id = int.Parse(reader["IdClana"].ToString());
+            string firstname = reader["FirstName"].ToString();
             string lastname = reader["Lastname"].ToString();
             string status = reader["Status_članarine"].ToString();
-
+            string email = reader["E_mail"].ToString() ;
+            string dateofbirth = reader["DateOfBirth"].ToString() ;
+            string contact = reader["Kontakt"].ToString();
+            DateTime enteredDate = DateTime.Parse(dateofbirth);
             var clanovi = new Clanovi
             {
-                Id = id,
+                IdClana = id,
+                StatusClanarine = status,
+                E_mail = email,
+                DateOfBirth = enteredDate,
+                Kontakt = contact,
                 FirstName = firstname,
                 LastName = lastname,
-                StatusClanarine = status,
             };
             return clanovi;
         }

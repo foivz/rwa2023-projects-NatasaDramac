@@ -8,9 +8,9 @@ namespace StrongManGym.Models
 {
     public class Clanovi : Person
     {
-        public int SifraClana { get; set; }
-        public string Email { get; set; }
-        public DateTime DatumRodenja { get; set; }
+        public int IdClana { get; set; }
+        public string E_mail { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string Kontakt { get; set; }
         public string StatusClanarine { get; set; }
     }
