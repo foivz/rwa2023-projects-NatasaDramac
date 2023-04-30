@@ -42,13 +42,13 @@
             this.dgvClanovi.Name = "dgvClanovi";
             this.dgvClanovi.RowHeadersWidth = 51;
             this.dgvClanovi.RowTemplate.Height = 24;
-            this.dgvClanovi.Size = new System.Drawing.Size(752, 346);
+            this.dgvClanovi.Size = new System.Drawing.Size(1040, 440);
             this.dgvClanovi.TabIndex = 0;
             this.dgvClanovi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClanovi_CellContentClick);
             // 
             // btnIzlaz
             // 
-            this.btnIzlaz.Location = new System.Drawing.Point(623, 394);
+            this.btnIzlaz.Location = new System.Drawing.Point(889, 475);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(124, 38);
             this.btnIzlaz.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // btnUlaz
             // 
-            this.btnUlaz.Location = new System.Drawing.Point(479, 394);
+            this.btnUlaz.Location = new System.Drawing.Point(741, 475);
             this.btnUlaz.Name = "btnUlaz";
             this.btnUlaz.Size = new System.Drawing.Size(124, 37);
             this.btnUlaz.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // btnNoviClan
             // 
-            this.btnNoviClan.Location = new System.Drawing.Point(324, 394);
+            this.btnNoviClan.Location = new System.Drawing.Point(577, 476);
             this.btnNoviClan.Name = "btnNoviClan";
             this.btnNoviClan.Size = new System.Drawing.Size(131, 37);
             this.btnNoviClan.TabIndex = 3;
@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1090, 552);
             this.Controls.Add(this.btnNoviClan);
             this.Controls.Add(this.btnUlaz);
             this.Controls.Add(this.btnIzlaz);

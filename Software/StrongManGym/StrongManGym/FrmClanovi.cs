@@ -27,10 +27,6 @@ namespace StrongManGym
         private void ShowClanovi()
         {
             var clanovi = ClanoviRepository.GetClanovis();
-            //DataGridView test = new DataGridView();
-            //test.DataSource = clanovi;
-            //test.Columns["Id"].Visible = false;
-            //dgvClanovi.Columns["Id"].Visible = false;
             dgvClanovi.DataSource = clanovi;
             dgvClanovi.Columns["Id"].Visible = false;
             dgvClanovi.Columns["IdClana"].DisplayIndex = 0;
@@ -44,7 +40,9 @@ namespace StrongManGym
 
         private void btnNoviClan_Click(object sender, EventArgs e)
         {
-
+            FrmNoviClan forma = new FrmNoviClan();
+            this.Hide();
+            forma.ShowDialog();
         }
 
         private void btnUlaz_Click(object sender, EventArgs e)
