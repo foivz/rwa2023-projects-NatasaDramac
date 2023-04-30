@@ -76,11 +76,12 @@
     </Compile>
     <Compile Include="Models\Clanovi.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\StatusClanarine.cs" />
     <Compile Include="Models\Zaposleni.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClanoviRepository.cs" />
-    <Compile Include="Repositories\StatusClanarine.cs" />
+    <Compile Include="Repositories\StatusClanarineRepository.cs" />
     <Compile Include="Repositories\ZaposleniRepository.cs" />
     <EmbeddedResource Include="FrmClanovi.resx">
       <DependentUpon>FrmClanovi.cs</DependentUpon>

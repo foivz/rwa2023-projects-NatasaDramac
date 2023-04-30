@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrongManGym.Repositories
+namespace StrongManGym.Models
 {
     public class StatusClanarine
     {
@@ -16,5 +16,5 @@ namespace StrongManGym.Repositories
             return NazivClanarine;
         }
     }
-    
 }
+

@@ -50,7 +50,7 @@ namespace StrongManGym
 
         private void cboStatusClanarine_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var status = cboStatusClanarine.SelectedItem as StatusClanarine;
+            var status = cboStatusClanarine.SelectedItem as StatusClanarineRepository;
         }
     }
 }
