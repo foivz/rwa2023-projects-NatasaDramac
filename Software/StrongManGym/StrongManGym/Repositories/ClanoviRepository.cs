@@ -66,6 +66,12 @@ namespace StrongManGym.Repositories
             };
             return clanovi;
         }
-     
+        public static void InsertNovogClana(Clanovi clanovi)
+        {
+            string query = $"INSERT INTO Clanovi (IdClana, FirstName, LastName, E_mail, DateOfBirth, Kontakt, Status_članarine) VALUES ({clanovi.IdClana},'{clanovi.FirstName}','{clanovi.LastName}','{clanovi.E_mail}','{clanovi.DateOfBirth:yyyy-MM-dd}','{clanovi.Kontakt}','{clanovi.StatusClanarine}')";
+            DB.OpenConnection();
+            DB.ExecuteCommand(query);
+            DB.CloseConnection();
+        }
     }
 }

@@ -30,18 +30,18 @@ namespace StrongManGym.Repositories
         private static StatusClanarine CreateObject(SqlDataReader reader)
         {
             int id = int.Parse(reader["IdClanarine"].ToString());   
-            string naziv = reader["NazivClana"].ToString();
+            string naziv = reader["NazivClanarine"].ToString();
 
-            var status = new StatusClanarine()
+            var statusClanarine = new StatusClanarine()
             {
-                Id = id,
+                IdClanarine = id,
                 NazivClanarine = naziv
             };
-            return status;
+            return statusClanarine;
         }
         public static List <StatusClanarine> GetStatusClanarines() 
         {
-            var statusClana = new List<StatusClanarine>();
+            List <StatusClanarine> statusClana = new List<StatusClanarine>();
             string query = "SELECT * FROM Clanarine";
             DB.OpenConnection();
             var reader = DB.GetDataReader(query);

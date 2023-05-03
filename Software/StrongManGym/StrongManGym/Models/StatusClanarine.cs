@@ -8,7 +8,7 @@ namespace StrongManGym.Models
 {
     public class StatusClanarine
     {
-        public int Id { get; set; }
+        public int IdClanarine { get; set; }
         public string NazivClanarine { get; set; }
 
         public override string ToString()

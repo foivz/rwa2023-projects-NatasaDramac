@@ -24,7 +24,7 @@ namespace StrongManGym
             ShowClanovi();
         }
 
-        private void ShowClanovi()
+        public void ShowClanovi()
         {
             var clanovi = ClanoviRepository.GetClanovis();
             dgvClanovi.DataSource = clanovi;

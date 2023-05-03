@@ -10,7 +10,7 @@ namespace StrongManGym.Models
     {
         public int IdClana { get; set; }
         public string E_mail { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public DateTimeOffset DateOfBirth { get; set; }
         public string Kontakt { get; set; }
         public string StatusClanarine { get; set; }
     }

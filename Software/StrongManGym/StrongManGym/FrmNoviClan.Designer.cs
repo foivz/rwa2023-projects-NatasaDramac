@@ -39,10 +39,10 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtDate = new System.Windows.Forms.TextBox();
             this.txtContact = new System.Windows.Forms.TextBox();
             this.cboStatusClanarine = new System.Windows.Forms.ComboBox();
             this.btnUpisiClana = new System.Windows.Forms.Button();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblSifraClana
@@ -114,7 +114,6 @@
             this.txtSifraClana.Name = "txtSifraClana";
             this.txtSifraClana.Size = new System.Drawing.Size(169, 22);
             this.txtSifraClana.TabIndex = 7;
-            this.txtSifraClana.TextChanged += new System.EventHandler(this.txtSifraClana_TextChanged);
             // 
             // txtFirstName
             // 
@@ -140,14 +139,6 @@
             this.txtEmail.TabIndex = 10;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
-            // txtDate
-            // 
-            this.txtDate.Location = new System.Drawing.Point(319, 230);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(169, 22);
-            this.txtDate.TabIndex = 11;
-            this.txtDate.TextChanged += new System.EventHandler(this.txtDate_TextChanged);
-            // 
             // txtContact
             // 
             this.txtContact.Location = new System.Drawing.Point(319, 287);
@@ -158,6 +149,8 @@
             // 
             // cboStatusClanarine
             // 
+            this.cboStatusClanarine.AllowDrop = true;
+            this.cboStatusClanarine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStatusClanarine.FormattingEnabled = true;
             this.cboStatusClanarine.Location = new System.Drawing.Point(319, 340);
             this.cboStatusClanarine.Name = "cboStatusClanarine";
@@ -173,16 +166,24 @@
             this.btnUpisiClana.TabIndex = 14;
             this.btnUpisiClana.Text = "Upiši člana";
             this.btnUpisiClana.UseVisualStyleBackColor = true;
+            this.btnUpisiClana.Click += new System.EventHandler(this.btnUpisiClana_Click);
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Location = new System.Drawing.Point(319, 230);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(169, 22);
+            this.dtpDate.TabIndex = 15;
             // 
             // FrmNoviClan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 495);
+            this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.btnUpisiClana);
             this.Controls.Add(this.cboStatusClanarine);
             this.Controls.Add(this.txtContact);
-            this.Controls.Add(this.txtDate);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
@@ -196,6 +197,7 @@
             this.Controls.Add(this.lblSifraClana);
             this.Name = "FrmNoviClan";
             this.Text = "Upis novog člana";
+            this.Load += new System.EventHandler(this.FrmNoviClan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,9 +216,9 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.TextBox txtContact;
-        private System.Windows.Forms.ComboBox cboStatusClanarine;
         private System.Windows.Forms.Button btnUpisiClana;
+        public System.Windows.Forms.ComboBox cboStatusClanarine;
+        private System.Windows.Forms.DateTimePicker dtpDate;
     }
 }
