@@ -44,7 +44,6 @@
             this.dgvClanovi.RowTemplate.Height = 24;
             this.dgvClanovi.Size = new System.Drawing.Size(1040, 440);
             this.dgvClanovi.TabIndex = 0;
-            this.dgvClanovi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClanovi_CellContentClick);
             // 
             // btnIzlaz
             // 

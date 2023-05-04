@@ -1,4 +1,5 @@
-﻿using StrongManGym.Models;
+﻿using DBLayer;
+using StrongManGym.Models;
 using StrongManGym.Repositories;
 using System;
 using System.Collections.Generic;
@@ -46,23 +47,37 @@ namespace StrongManGym
         }
 
         private void btnUlaz_Click(object sender, EventArgs e)
-        {
-            var selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clanovi;
-            if(selectedClan != null)
-            {
-                //var form = new FrmSelectedClan(selectedClan);
-                //form.ShowDialog();
-            }
+        { 
+            
+                var selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clanovi;
+                if (selectedClan != null)
+                {
+                    var ulaz = new UlazIzlaz
+                    {
+                        IdClana = selectedClan.IdClana,
+                        Ulaz = DateTime.Now
+                    };
+                    
+                UlazIzlazRepostiroy.InsertUlaz(ulaz);
+                MessageBox.Show("Uspješno zabilježen ulaz!");
+                }
+
         }
 
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
+            var selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clanovi;
+            if (selectedClan != null)
+            {
+                var izlaz = new UlazIzlaz
+                {
+                    IdClana = selectedClan.IdClana,
+                    Izlaz = DateTime.Now
+                };
 
-        }
-
-        private void dgvClanovi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+                UlazIzlazRepostiroy.InsertIzlaz(izlaz);
+                MessageBox.Show("Uspješno zabilježen izlaz!");
+            }
         }
     }
 }
