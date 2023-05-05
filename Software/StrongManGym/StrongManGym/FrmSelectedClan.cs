@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StrongManGym.Models;
+using StrongManGym.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,39 @@ namespace StrongManGym
 {
     public partial class FrmSelectedClan : Form
     {
-        public FrmSelectedClan()
+        private Clanovi SelectedClan;
+        public FrmSelectedClan(Models.Clanovi selectedClan)
         {
             InitializeComponent();
+            SelectedClan = selectedClan;
+        }
+
+    public void ShowUlazIzlaz()
+        {
+            int idClana = SelectedClan.IdClana;
+            List<UlazIzlaz> ulazIzlazClana = UlazIzlazRepostiroy.GetUlazIzlazs(idClana);
+            dgvSelectedClan.DataSource = ulazIzlazClana;
+            dgvSelectedClan.Columns["IdUlazIzlaz"].Visible = false;
+            dgvSelectedClan.Columns["IdClana"].Visible = false;
+            dgvSelectedClan.Columns["Ulaz"].HeaderText = "Vrijeme ulaska";
+            dgvSelectedClan.Columns["Izlaz"].HeaderText = "Vrijeme izlaska";
+        }
+
+        private void FrmSelectedClan_Load(object sender, EventArgs e)
+        {
+            SetFormText();
+            ShowUlazIzlaz();
+
+        }
+
+        private void SetFormText()
+        {
+            Text = SelectedClan.FirstName + " " + SelectedClan.LastName;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

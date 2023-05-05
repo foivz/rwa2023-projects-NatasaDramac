@@ -52,7 +52,8 @@
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(73, 16);
             this.lblUsername.TabIndex = 1;
-            this.lblUsername.Text = "Username:";            // 
+            this.lblUsername.Text = "Username:";
+            // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
@@ -75,6 +76,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(153, 22);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // FrmLogin
             // 

@@ -94,6 +94,9 @@
     <EmbeddedResource Include="FrmNoviClan.resx">
       <DependentUpon>FrmNoviClan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectedClan.resx">
+      <DependentUpon>FrmSelectedClan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

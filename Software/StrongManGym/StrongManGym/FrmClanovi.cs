@@ -1,4 +1,5 @@
 ﻿using DBLayer;
+using StrongManGym;
 using StrongManGym.Models;
 using StrongManGym.Repositories;
 using System;
@@ -78,6 +79,18 @@ namespace StrongManGym
                 UlazIzlazRepostiroy.InsertIzlaz(izlaz);
                 MessageBox.Show("Uspješno zabilježen izlaz!");
             }
+        }
+
+        private void btnPrikaziClana_Click(object sender, EventArgs e)
+        {
+            
+            Clanovi selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clanovi;
+            if(selectedClan != null)
+            {
+                FrmSelectedClan showSelectedClan = new FrmSelectedClan(selectedClan);
+                showSelectedClan.ShowDialog();
+            }
+
         }
     }
 }

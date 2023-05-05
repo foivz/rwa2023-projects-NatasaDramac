@@ -32,22 +32,23 @@
             this.btnIzlaz = new System.Windows.Forms.Button();
             this.btnUlaz = new System.Windows.Forms.Button();
             this.btnNoviClan = new System.Windows.Forms.Button();
+            this.btnPrikaziClana = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanovi)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvClanovi
             // 
             this.dgvClanovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClanovi.Location = new System.Drawing.Point(23, 12);
+            this.dgvClanovi.Location = new System.Drawing.Point(12, 12);
             this.dgvClanovi.Name = "dgvClanovi";
             this.dgvClanovi.RowHeadersWidth = 51;
             this.dgvClanovi.RowTemplate.Height = 24;
-            this.dgvClanovi.Size = new System.Drawing.Size(1040, 440);
+            this.dgvClanovi.Size = new System.Drawing.Size(1040, 480);
             this.dgvClanovi.TabIndex = 0;
             // 
             // btnIzlaz
             // 
-            this.btnIzlaz.Location = new System.Drawing.Point(889, 475);
+            this.btnIzlaz.Location = new System.Drawing.Point(743, 550);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(124, 38);
             this.btnIzlaz.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             // btnUlaz
             // 
-            this.btnUlaz.Location = new System.Drawing.Point(741, 475);
+            this.btnUlaz.Location = new System.Drawing.Point(743, 505);
             this.btnUlaz.Name = "btnUlaz";
             this.btnUlaz.Size = new System.Drawing.Size(124, 37);
             this.btnUlaz.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // btnNoviClan
             // 
-            this.btnNoviClan.Location = new System.Drawing.Point(577, 476);
+            this.btnNoviClan.Location = new System.Drawing.Point(24, 505);
             this.btnNoviClan.Name = "btnNoviClan";
             this.btnNoviClan.Size = new System.Drawing.Size(131, 37);
             this.btnNoviClan.TabIndex = 3;
@@ -75,11 +76,22 @@
             this.btnNoviClan.UseVisualStyleBackColor = true;
             this.btnNoviClan.Click += new System.EventHandler(this.btnNoviClan_Click);
             // 
+            // btnPrikaziClana
+            // 
+            this.btnPrikaziClana.Location = new System.Drawing.Point(893, 522);
+            this.btnPrikaziClana.Name = "btnPrikaziClana";
+            this.btnPrikaziClana.Size = new System.Drawing.Size(129, 53);
+            this.btnPrikaziClana.TabIndex = 4;
+            this.btnPrikaziClana.Text = "Prikaži ulaze i izlaze člana";
+            this.btnPrikaziClana.UseVisualStyleBackColor = true;
+            this.btnPrikaziClana.Click += new System.EventHandler(this.btnPrikaziClana_Click);
+            // 
             // FrmClanovi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1090, 552);
+            this.ClientSize = new System.Drawing.Size(1130, 600);
+            this.Controls.Add(this.btnPrikaziClana);
             this.Controls.Add(this.btnNoviClan);
             this.Controls.Add(this.btnUlaz);
             this.Controls.Add(this.btnIzlaz);
@@ -98,5 +110,6 @@
         private System.Windows.Forms.Button btnIzlaz;
         private System.Windows.Forms.Button btnUlaz;
         private System.Windows.Forms.Button btnNoviClan;
+        private System.Windows.Forms.Button btnPrikaziClana;
     }
 }
