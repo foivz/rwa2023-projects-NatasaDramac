@@ -1,1 +1,0 @@
-ALTER TABLE UlazIzlaz ADD CONSTRAINT FK_UlazIzlaz_Clanovi FOREIGN KEY (IdClana) REFERENCES Clanovi(IdClana)
