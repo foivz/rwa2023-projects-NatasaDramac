@@ -33,17 +33,20 @@
             this.btnUlaz = new System.Windows.Forms.Button();
             this.btnNoviClan = new System.Windows.Forms.Button();
             this.btnPrikaziClana = new System.Windows.Forms.Button();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanovi)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvClanovi
             // 
             this.dgvClanovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClanovi.Location = new System.Drawing.Point(12, 12);
+            this.dgvClanovi.Location = new System.Drawing.Point(12, 72);
             this.dgvClanovi.Name = "dgvClanovi";
             this.dgvClanovi.RowHeadersWidth = 51;
             this.dgvClanovi.RowTemplate.Height = 24;
-            this.dgvClanovi.Size = new System.Drawing.Size(1040, 480);
+            this.dgvClanovi.Size = new System.Drawing.Size(1040, 420);
             this.dgvClanovi.TabIndex = 0;
             // 
             // btnIzlaz
@@ -86,11 +89,40 @@
             this.btnPrikaziClana.UseVisualStyleBackColor = true;
             this.btnPrikaziClana.Click += new System.EventHandler(this.btnPrikaziClana_Click);
             // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(357, 24);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(294, 22);
+            this.txtFilter.TabIndex = 5;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(37, 30);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(256, 16);
+            this.lblSearch.TabIndex = 6;
+            this.lblSearch.Text = "Pretraži člana prema imenu i/ili prezimenu:";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(670, 23);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(83, 23);
+            this.btnSearch.TabIndex = 7;
+            this.btnSearch.Text = "Pretraži";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // FrmClanovi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 600);
+            this.ClientSize = new System.Drawing.Size(1078, 600);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnPrikaziClana);
             this.Controls.Add(this.btnNoviClan);
             this.Controls.Add(this.btnUlaz);
@@ -102,6 +134,7 @@
             this.Load += new System.EventHandler(this.FrmClanovi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanovi)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -112,5 +145,8 @@
         private System.Windows.Forms.Button btnUlaz;
         private System.Windows.Forms.Button btnNoviClan;
         private System.Windows.Forms.Button btnPrikaziClana;
+        private System.Windows.Forms.TextBox txtFilter;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

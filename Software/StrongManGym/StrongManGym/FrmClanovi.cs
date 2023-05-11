@@ -26,10 +26,27 @@ namespace StrongManGym
             ShowClanovi();
         }
 
-        public void ShowClanovi()
+        public void ShowClanovi(string filter = "")
         {
-            var clanovi = ClanoviRepository.GetClanovis();
-            dgvClanovi.DataSource = clanovi;
+            var clanovi = ClanoviRepository.GetClanovis().ToList();
+            if (!string.IsNullOrEmpty(filter) )
+            {
+                var filteredClanovi = ClanoviRepository.GetClanovis().Where(c => c.FirstName.ToLower().Contains(filter.ToLower()) || c.LastName.ToLower().Contains(filter.ToLower())).ToList();
+                if (filteredClanovi.Any())
+                {
+                    dgvClanovi.DataSource = filteredClanovi;
+                }
+                else
+                {
+                    dgvClanovi.DataSource = null;
+                    MessageBox.Show("Traženi član nije pronađen.");
+                }
+            }
+            else
+            {
+                dgvClanovi.DataSource = clanovi;
+            }
+            
             dgvClanovi.Columns["Id"].Visible = false;
             dgvClanovi.Columns["IdClana"].DisplayIndex = 0;
             dgvClanovi.Columns["FirstName"].DisplayIndex = 1;
@@ -91,6 +108,22 @@ namespace StrongManGym
                 showSelectedClan.ShowDialog();
             }
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string filter = txtFilter.Text.Trim().ToLower();
+            var clanovi = ClanoviRepository.GetClanovis().ToList();
+            var filteredClanovi = clanovi.Where(c => c.FirstName.ToLower().Contains(filter) || c.LastName.ToLower().Contains(filter)).ToList();
+            if (filteredClanovi.Count == 0)
+            {
+                MessageBox.Show("Traženi član nije pronađen!");
+                ShowClanovi();
+            }
+            else
+            {
+                dgvClanovi.DataSource = filteredClanovi;
+            }
         }
     }
 }
