@@ -15,13 +15,13 @@ Ovaj projekt pruža rješenje za jednostavnije vođenje poslovanja jedne teretan
 
 Oznaka |         Naziv         | Kratki opis 
 ------ | --------------------- | ----------- 
- F01   |         Login         | Za pristup sustavu potrebna je autentifikacija korisnika pomoću login funkcionalnosti. Zaposlenik se logira s podacima koji su mu dodijeljeni ovisno o tome koliko ovlasti im je vlasnik dodijelio. 
+ F01   |         Login         | Za pristup sustavu potrebna je autentifikacija korisnika pomoću login funkcionalnosti. Zaposlenik se logira s podacima koji su mu dodijeljeni. 
   F02   | Bilježenje ulaza i izlaza članova te prikaz svih članova  | Sustav omogućuje bilježenje ulaza i izlaza svakog pojedinog člana te prikaz svih članova teretane na jednom mjestu.
  F03  | Unos osobnih podataka | Za upis novog člana potrebno je unijeti slijedeće osobne podatke: ime, prezime, e-mail, godina rođenja, kontakt i status članarine.
 
     
 ## Tehnologije i oprema
 
-Za verzioniranje programskog koda koristit će se git i GitHub, za pisanje tehničke i projektne dokumentacije GitHub Wiki, a za planiranje i praćenje projektnog zadatka alat GitHub projects. Nadalje, za razvijanje projekta koristit će se .Net Framework kao razvojni okvir pri čemu će vrsta projekta biti WPF.
+Za verzioniranje programskog koda koristit će se git i GitHub, za pisanje tehničke i projektne dokumentacije GitHub Wiki, a za planiranje i praćenje projektnog zadatka alat GitHub projects. Nadalje, za razvijanje projekta koristit će se .Net Framework kao razvojni okvir.
 
 ![Online Gantt 20230319](https://user-images.githubusercontent.com/127131250/226206534-eddd3676-c089-41d4-bdc0-a5aa56eac623.png)
