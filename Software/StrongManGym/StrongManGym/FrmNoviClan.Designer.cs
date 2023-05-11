@@ -208,6 +208,7 @@
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblSifraClana);
             this.Name = "FrmNoviClan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Upis novog člana";
             this.Load += new System.EventHandler(this.FrmNoviClan_Load);
             this.ResumeLayout(false);

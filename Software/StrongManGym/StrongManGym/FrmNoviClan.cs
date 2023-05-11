@@ -11,6 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace StrongManGym
 {
@@ -57,29 +58,58 @@ namespace StrongManGym
 
         private void btnUpisiClana_Click(object sender, EventArgs e)
         {
-            var sifra = int.Parse(txtSifraClana.Text);
+            
+
+            var sifra =txtSifraClana.Text;
             var name = txtFirstName.Text;
             var lastname = txtLastName.Text;
             var email = txtEmail.Text;
-            var dateofbirth = DateTimeOffset.Parse(dtpDate.Value.ToString("yyyy-MM-dd"));
+            var dateofbirth = dtpDate.Value;
             var contact = txtContact.Text;
             var status = cboStatusClanarine.SelectedItem as StatusClanarine;
 
-            var clanovi = new Clan
+            if (string.IsNullOrEmpty(sifra))
             {
-                IdClana = sifra,
-                FirstName = name,
-                LastName = lastname,
-                E_mail = email,
-                DateOfBirth = dateofbirth,
-                Kontakt = contact,
-                StatusClanarine = status.NazivClanarine
-            };
-            ClanoviRepository.InsertNovogClana(clanovi);
-            
-            FrmClanovi frmClanovi = new FrmClanovi();
-            this.Hide();
-            frmClanovi.ShowDialog();
+                MessageBox.Show("Morate upisati šifru člana!");
+            }
+            else if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Morate upisati ime člana!");
+            }
+            else if (string.IsNullOrEmpty(lastname))
+            {
+                MessageBox.Show("Morate upisati prezime člana!");
+            }
+            else if (string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Morate upisati e-mail člana!");
+            }
+            else if (dateofbirth > DateTime.Today.AddYears(-15))
+            {
+                MessageBox.Show("Član mora biti stariji od 15 godina!");
+            }
+            else if (string.IsNullOrEmpty(contact))
+            {
+                MessageBox.Show("Morate upisati kontakt člana!");
+            }
+            else
+            {
+                var clanovi = new Clan
+                {
+                    IdClana = int.Parse(sifra),
+                    FirstName = name,
+                    LastName = lastname,
+                    E_mail = email,
+                    DateOfBirth = dateofbirth,
+                    Kontakt = contact,
+                    StatusClanarine = status.NazivClanarine
+                };
+                ClanoviRepository.InsertNovogClana(clanovi);
+
+                FrmClanovi frmClanovi = new FrmClanovi();
+                this.Hide();
+                frmClanovi.ShowDialog();
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
