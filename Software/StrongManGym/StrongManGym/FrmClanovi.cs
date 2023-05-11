@@ -50,7 +50,7 @@ namespace StrongManGym
         private void btnUlaz_Click(object sender, EventArgs e)
         { 
             
-                var selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clanovi;
+                var selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clan;
                 if (selectedClan != null)
                 {
                     var ulaz = new UlazIzlaz
@@ -67,7 +67,7 @@ namespace StrongManGym
 
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
-            var selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clanovi;
+            var selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clan;
             if (selectedClan != null)
             {
                 var izlaz = new UlazIzlaz
@@ -84,7 +84,7 @@ namespace StrongManGym
         private void btnPrikaziClana_Click(object sender, EventArgs e)
         {
             
-            Clanovi selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clanovi;
+            Clan selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clan;
             if(selectedClan != null)
             {
                 FrmSelectedClan showSelectedClan = new FrmSelectedClan(selectedClan);

@@ -65,7 +65,7 @@ namespace StrongManGym
             var contact = txtContact.Text;
             var status = cboStatusClanarine.SelectedItem as StatusClanarine;
 
-            var clanovi = new Clanovi
+            var clanovi = new Clan
             {
                 IdClana = sifra,
                 FirstName = name,
@@ -79,6 +79,13 @@ namespace StrongManGym
             
             FrmClanovi frmClanovi = new FrmClanovi();
             this.Hide();
+            frmClanovi.ShowDialog();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Close();
+            FrmClanovi frmClanovi = new FrmClanovi();
             frmClanovi.ShowDialog();
         }
     }

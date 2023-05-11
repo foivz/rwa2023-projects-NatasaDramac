@@ -14,8 +14,8 @@ namespace StrongManGym
 {
     public partial class FrmSelectedClan : Form
     {
-        private Clanovi SelectedClan;
-        public FrmSelectedClan(Models.Clanovi selectedClan)
+        private Clan SelectedClan;
+        public FrmSelectedClan(Models.Clan selectedClan)
         {
             InitializeComponent();
             SelectedClan = selectedClan;

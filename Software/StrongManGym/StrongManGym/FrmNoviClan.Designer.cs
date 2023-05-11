@@ -43,6 +43,7 @@
             this.cboStatusClanarine = new System.Windows.Forms.ComboBox();
             this.btnUpisiClana = new System.Windows.Forms.Button();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSifraClana
@@ -175,11 +176,22 @@
             this.dtpDate.Size = new System.Drawing.Size(169, 22);
             this.dtpDate.TabIndex = 15;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(92, 413);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(112, 39);
+            this.btnBack.TabIndex = 16;
+            this.btnBack.Text = "Natrag";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // FrmNoviClan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(633, 495);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.btnUpisiClana);
             this.Controls.Add(this.cboStatusClanarine);
@@ -220,5 +232,6 @@
         private System.Windows.Forms.Button btnUpisiClana;
         public System.Windows.Forms.ComboBox cboStatusClanarine;
         private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Button btnBack;
     }
 }

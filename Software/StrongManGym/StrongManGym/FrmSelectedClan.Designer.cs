@@ -64,6 +64,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvSelectedClan);
             this.Name = "FrmSelectedClan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSelectedClan";
             this.Load += new System.EventHandler(this.FrmSelectedClan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSelectedClan)).EndInit();

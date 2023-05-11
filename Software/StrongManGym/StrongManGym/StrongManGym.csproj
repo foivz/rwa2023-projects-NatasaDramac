@@ -74,7 +74,7 @@
     <Compile Include="FrmSelectedClan.Designer.cs">
       <DependentUpon>FrmSelectedClan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Clanovi.cs" />
+    <Compile Include="Models\Clan.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\StatusClanarine.cs" />
     <Compile Include="Models\UlazIzlaz.cs" />

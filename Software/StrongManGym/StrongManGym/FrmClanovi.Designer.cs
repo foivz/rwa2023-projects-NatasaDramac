@@ -97,6 +97,7 @@
             this.Controls.Add(this.btnIzlaz);
             this.Controls.Add(this.dgvClanovi);
             this.Name = "FrmClanovi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Popis Članova";
             this.Load += new System.EventHandler(this.FrmClanovi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanovi)).EndInit();

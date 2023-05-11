@@ -12,9 +12,9 @@ namespace StrongManGym.Repositories
 {
     public class ClanoviRepository
     {
-        public static Clanovi GetClanovi(int id) 
+        public static Clan GetClanovi(int id) 
         {
-            Clanovi clanovi = null;
+            Clan clanovi = null;
             string query = $"SELECT * FROM Clanovi WHERE IdClana = {id}";
             DB.OpenConnection();
             var reader = DB.GetDataReader(query);
@@ -27,15 +27,15 @@ namespace StrongManGym.Repositories
             DB.CloseConnection();
             return clanovi;
         }
-        public static List <Clanovi> GetClanovis()
+        public static List <Clan> GetClanovis()
         {
-            var clanovi = new List<Clanovi>();
+            var clanovi = new List<Clan>();
             string query = "SELECT * FROM Clanovi";
             DB.OpenConnection();
             var reader = DB.GetDataReader(query);
             while (reader.Read())
             {
-                Clanovi clanovi1 = CreateObject(reader);
+                Clan clanovi1 = CreateObject(reader);
                 clanovi.Add(clanovi1);
             }
             reader.Close();
@@ -43,7 +43,7 @@ namespace StrongManGym.Repositories
             return clanovi;
         }
 
-        private static Clanovi CreateObject(SqlDataReader reader)
+        private static Clan CreateObject(SqlDataReader reader)
         {
             
             int id = int.Parse(reader["IdClana"].ToString());
@@ -54,7 +54,7 @@ namespace StrongManGym.Repositories
             string dateofbirth = reader["DateOfBirth"].ToString() ;
             string contact = reader["Kontakt"].ToString();
             DateTime enteredDate = DateTime.Parse(dateofbirth);
-            var clanovi = new Clanovi
+            var clanovi = new Clan
             {
                 IdClana = id,
                 StatusClanarine = status,
@@ -66,7 +66,7 @@ namespace StrongManGym.Repositories
             };
             return clanovi;
         }
-        public static void InsertNovogClana(Clanovi clanovi)
+        public static void InsertNovogClana(Clan clanovi)
         {
             string query = $"INSERT INTO Clanovi (IdClana, FirstName, LastName, E_mail, DateOfBirth, Kontakt, Status_članarine) VALUES ({clanovi.IdClana},'{clanovi.FirstName}','{clanovi.LastName}','{clanovi.E_mail}','{clanovi.DateOfBirth:yyyy-MM-dd}','{clanovi.Kontakt}','{clanovi.StatusClanarine}')";
             DB.OpenConnection();
