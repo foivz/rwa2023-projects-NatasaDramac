@@ -139,10 +139,6 @@ namespace StrongManGym
 
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            Trazi();
-        }
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {

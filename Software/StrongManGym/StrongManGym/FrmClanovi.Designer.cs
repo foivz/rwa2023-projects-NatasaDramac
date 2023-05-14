@@ -35,7 +35,6 @@
             this.btnPrikaziClana = new System.Windows.Forms.Button();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClanovi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,22 +112,11 @@
             this.lblSearch.TabIndex = 6;
             this.lblSearch.Text = "Pretraži člana prema imenu i/ili prezimenu:";
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(670, 23);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(83, 23);
-            this.btnSearch.TabIndex = 7;
-            this.btnSearch.Text = "Pretraži";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // FrmClanovi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 600);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnPrikaziClana);
@@ -155,6 +143,5 @@
         private System.Windows.Forms.Button btnPrikaziClana;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.Button btnSearch;
     }
 }
