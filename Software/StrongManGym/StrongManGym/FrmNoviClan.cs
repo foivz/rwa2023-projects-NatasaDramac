@@ -102,8 +102,7 @@ namespace StrongManGym
                     E_mail = email,
                     DateOfBirth = dateofbirth,
                     Kontakt = contact,
-                    IdClanarine = status.IdClanarine,
-                    NazivClanarine = status.NazivClanarine
+                    IdClanarine = status.IdClanarine
                 };
                 ClanoviRepository.InsertNovogClana(clanovi);
 

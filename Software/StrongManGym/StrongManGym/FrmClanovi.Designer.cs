@@ -41,6 +41,9 @@
             // 
             // dgvClanovi
             // 
+            this.dgvClanovi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClanovi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClanovi.Location = new System.Drawing.Point(12, 72);
             this.dgvClanovi.Name = "dgvClanovi";
@@ -51,6 +54,7 @@
             // 
             // btnIzlaz
             // 
+            this.btnIzlaz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIzlaz.Location = new System.Drawing.Point(743, 550);
             this.btnIzlaz.Name = "btnIzlaz";
             this.btnIzlaz.Size = new System.Drawing.Size(124, 38);
@@ -61,6 +65,7 @@
             // 
             // btnUlaz
             // 
+            this.btnUlaz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUlaz.Location = new System.Drawing.Point(743, 505);
             this.btnUlaz.Name = "btnUlaz";
             this.btnUlaz.Size = new System.Drawing.Size(124, 37);
@@ -71,6 +76,7 @@
             // 
             // btnNoviClan
             // 
+            this.btnNoviClan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnNoviClan.Location = new System.Drawing.Point(24, 505);
             this.btnNoviClan.Name = "btnNoviClan";
             this.btnNoviClan.Size = new System.Drawing.Size(131, 37);
@@ -81,6 +87,7 @@
             // 
             // btnPrikaziClana
             // 
+            this.btnPrikaziClana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrikaziClana.Location = new System.Drawing.Point(893, 522);
             this.btnPrikaziClana.Name = "btnPrikaziClana";
             this.btnPrikaziClana.Size = new System.Drawing.Size(129, 53);
@@ -95,6 +102,7 @@
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(294, 22);
             this.txtFilter.TabIndex = 5;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // lblSearch
             // 

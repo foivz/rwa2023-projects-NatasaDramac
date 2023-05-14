@@ -21,7 +21,8 @@ namespace StrongManGym.Repositories
 
         public static void InsertIzlaz(UlazIzlaz izlaz)
         {
-            string query = $"INSERT INTO UlazIzlaz (IdClana, Izlaz) VALUES ({izlaz.IdClana},'{izlaz.Izlaz:yyyy-MM-dd HH:mm:ss}')";
+            //string query = $"INSERT INTO UlazIzlaz (IdClana, Izlaz) VALUES ({izlaz.IdClana},'{izlaz.Izlaz:yyyy-MM-dd HH:mm:ss}')";
+            string query = $"UPDATE UlazIzlaz SET Izlaz = '{izlaz.Izlaz:yyyy-MM-dd HH:mm:ss}' WHERE IdUlazIzlaz = {izlaz.IdUlazIzlaz}";
             DB.OpenConnection();
             DB.ExecuteCommand(query);
             DB.CloseConnection();

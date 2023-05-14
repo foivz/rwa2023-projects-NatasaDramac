@@ -114,9 +114,15 @@ namespace StrongManGym
                 }
                 else
                 {
-                    posljednjiUlazIzlaz.Izlaz = DateTime.Now;
-                    UlazIzlazRepostiroy.InsertIzlaz(posljednjiUlazIzlaz);
-                    MessageBox.Show("Uspješno zabilježen izlaz!");
+                    if (posljednjiUlazIzlaz.Izlaz == null)
+                    {
+                        posljednjiUlazIzlaz.Izlaz = DateTime.Now;
+                        UlazIzlazRepostiroy.InsertIzlaz(posljednjiUlazIzlaz);
+                        MessageBox.Show("Uspješno zabilježen izlaz!");
+                    }
+                    else {
+                        MessageBox.Show("Za odabranog člana već je zabilježen izlaz!");
+                    }
                 }
             }
         }
@@ -134,6 +140,16 @@ namespace StrongManGym
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Trazi();
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            Trazi();
+        }
+
+        private void Trazi()
         {
             string filter = txtFilter.Text.Trim().ToLower();
             var clanovi = ClanoviRepository.GetClanovis().ToList();

@@ -11,15 +11,20 @@ namespace StrongManGym.Models
     {
         [DisplayName("Id")]
         public int IdClana { get; set; }
+
         [DisplayName("E-mail")]
         public string E_mail { get; set; }
+
         [DisplayName("Datum rođenja")]
         public DateTimeOffset DateOfBirth { get; set; }
+
         [DisplayName("Kontakt")]
         public string Kontakt { get; set; }
+
         [DisplayName("Id članarine")]
         public int IdClanarine { get; set; }
-        [DisplayName("Status članarine")]
+
+        [DisplayName("Naziv članarine")]
         public string NazivClanarine { get; set; }
     }
 }
