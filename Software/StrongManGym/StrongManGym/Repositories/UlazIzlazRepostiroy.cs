@@ -63,12 +63,16 @@ namespace StrongManGym.Repositories
         {
             int id = int.Parse(reader["IdUlazIzlaz"].ToString());
             int idClana = int.Parse(reader["IdClana"].ToString());
-            string ulaz = reader["Ulaz"].ToString();
-            string izlaz = reader["Izlaz"].ToString();
-            DateTime dateUlaz;
-            DateTime.TryParse(ulaz, out dateUlaz);
-            DateTime dateIzlaz;
-            DateTime.TryParse(izlaz, out dateIzlaz);
+            
+            DateTime? dateUlaz = null;
+            if (!string.IsNullOrEmpty(reader["Ulaz"].ToString()))
+                dateUlaz = DateTime.Parse(reader["Ulaz"].ToString());
+
+            DateTime? dateIzlaz = null;
+            if(!string.IsNullOrEmpty(reader["Izlaz"].ToString()))
+                dateIzlaz = DateTime.Parse(reader["Izlaz"].ToString());
+
+           
 
             var ulazIzlaz = new UlazIzlaz
             {
@@ -79,5 +83,38 @@ namespace StrongManGym.Repositories
             };
             return ulazIzlaz;
         }
+
+        public static UlazIzlaz GetPosljednjiUlazIzlaz(int idClana)
+        {
+            UlazIzlaz ulaz = null;
+            string query = $"SELECT TOP 1 * FROM UlazIzlaz WHERE IdClana = {idClana} ORDER BY IdUlazIzlaz DESC";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(query);
+            if (reader.HasRows)
+            {
+                reader.Read();
+                ulaz = CreateObject(reader);
+            }
+            reader.Close();
+            DB.CloseConnection();
+            return ulaz;
+        }
+
+        public static UlazIzlaz GetPosljednjiUlaz(int idClana)
+        {
+            UlazIzlaz izlaz = null;
+            string query = $"SELECT TOP 1 * FROM UlazIzlaz WHERE IdClana = {idClana} AND Ulaz IS NOT NULL ORDER BY Izlaz DESC";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(query);
+            if (reader.HasRows)
+            {
+                reader.Read();
+                izlaz = CreateObject(reader);
+            }
+            reader.Close();
+            DB.CloseConnection();
+            return izlaz;
+        }
+
     }
 }

@@ -10,7 +10,7 @@ namespace StrongManGym.Models
     {
         public int IdUlazIzlaz { get; set; }
         public int IdClana { get; set; }
-        public DateTime Ulaz { get; set; }
-        public DateTime Izlaz { get; set; }
+        public DateTime? Ulaz { get; set; }
+        public DateTime? Izlaz { get; set; }
     }
 }

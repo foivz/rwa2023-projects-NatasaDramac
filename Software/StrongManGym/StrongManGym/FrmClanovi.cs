@@ -54,7 +54,8 @@ namespace StrongManGym
             dgvClanovi.Columns["E_mail"].DisplayIndex = 3;
             dgvClanovi.Columns["DateOfBirth"].DisplayIndex = 4;
             dgvClanovi.Columns["Kontakt"].DisplayIndex = 5;
-            dgvClanovi.Columns["StatusClanarine"].DisplayIndex = 6;
+            dgvClanovi.Columns["NazivClanarine"].DisplayIndex = 6;
+            dgvClanovi.Columns["IdClanarine"].Visible = false;
         }
 
         private void btnNoviClan_Click(object sender, EventArgs e)
@@ -65,36 +66,58 @@ namespace StrongManGym
         }
 
         private void btnUlaz_Click(object sender, EventArgs e)
-        { 
-            
-                var selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clan;
-                if (selectedClan != null)
+        {
+
+            var selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clan;
+            if (selectedClan != null)
+            {
+                var posljednjiUlazIzlaz = UlazIzlazRepostiroy.GetPosljednjiUlazIzlaz(selectedClan.IdClana);
+                if (posljednjiUlazIzlaz == null)
+                {
+                   var ulaz = new UlazIzlaz
+                    {
+                        IdClana = selectedClan.IdClana,
+                        Ulaz = DateTime.Now
+                    };
+
+                    UlazIzlazRepostiroy.InsertUlaz(ulaz);
+                    MessageBox.Show("Uspješno zabilježen ulaz!");
+                }
+
+                else if (posljednjiUlazIzlaz.Izlaz != null)
                 {
                     var ulaz = new UlazIzlaz
                     {
                         IdClana = selectedClan.IdClana,
                         Ulaz = DateTime.Now
                     };
-                    
-                UlazIzlazRepostiroy.InsertUlaz(ulaz);
-                MessageBox.Show("Uspješno zabilježen ulaz!");
+
+                    UlazIzlazRepostiroy.InsertUlaz(ulaz) ;
+                    MessageBox.Show("Uspješno zabilježen ulaz!");
                 }
-
+                else
+                {
+                    MessageBox.Show("Za odabranog člana ulaz je već zabilježen!");
+                }
+            }
         }
-
         private void btnIzlaz_Click(object sender, EventArgs e)
         {
             var selectedClan = dgvClanovi.CurrentRow.DataBoundItem as Clan;
             if (selectedClan != null)
             {
-                var izlaz = new UlazIzlaz
+                var posljednjiUlazIzlaz = UlazIzlazRepostiroy.GetPosljednjiUlazIzlaz(selectedClan.IdClana);
+               
+                if (posljednjiUlazIzlaz == null || posljednjiUlazIzlaz.Ulaz == null)
                 {
-                    IdClana = selectedClan.IdClana,
-                    Izlaz = DateTime.Now
-                };
-
-                UlazIzlazRepostiroy.InsertIzlaz(izlaz);
-                MessageBox.Show("Uspješno zabilježen izlaz!");
+                    MessageBox.Show("Za odabranog člana nije zabilježen ulaz!");
+                }
+                else
+                {
+                    posljednjiUlazIzlaz.Izlaz = DateTime.Now;
+                    UlazIzlazRepostiroy.InsertIzlaz(posljednjiUlazIzlaz);
+                    MessageBox.Show("Uspješno zabilježen izlaz!");
+                }
             }
         }
 

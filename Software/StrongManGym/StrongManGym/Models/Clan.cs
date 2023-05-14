@@ -17,7 +17,9 @@ namespace StrongManGym.Models
         public DateTimeOffset DateOfBirth { get; set; }
         [DisplayName("Kontakt")]
         public string Kontakt { get; set; }
+        [DisplayName("Id članarine")]
+        public int IdClanarine { get; set; }
         [DisplayName("Status članarine")]
-        public string StatusClanarine { get; set; }
+        public string NazivClanarine { get; set; }
     }
 }
