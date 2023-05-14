@@ -30,7 +30,7 @@ namespace StrongManGym.Repositories
         public static List<Clan> GetClanovis()
         {
             var clanovi = new List<Clan>();
-            string query = "SELECT * FROM Clanovi";
+            string query = "SELECT Clanovi.*, Clanarine.NazivClanarine FROM Clanovi LEFT JOIN Clanarine ON Clanovi.idClanarine = Clanarine.IdClanarine";
             DB.OpenConnection();
             var reader = DB.GetDataReader(query);
             while (reader.Read())
